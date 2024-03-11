@@ -69,7 +69,8 @@ def start_scheduler(app):
     
     scheduler = BackgroundScheduler()
     # scheduler.add_job(lambda: backup_database(app), 'cron', minute='*')  # Once every minute
-    scheduler.add_job(lambda: backup_database(app), 'cron', minute=0) # every hour
+    # scheduler.add_job(lambda: backup_database(app), 'cron', minute=0) # every hour
+    scheduler.add_job(lambda: backup_database(app), 'cron', minute='*/5') # every 5 minutes
     # scheduler.add_job(lambda: restore_database(), 'cron', day_of_week='*', hour=0, minute=0)  # Daily at midnight, adjust as needed
     
     # Start the scheduler
