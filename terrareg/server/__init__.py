@@ -114,6 +114,11 @@ class Server(BaseHandler):
             #prefix='v1'
         )
 
+        # Start Sqlite Backup Scheler
+        from sqlite_backup_restore import start_scheduler, restore_database
+        restore_database(self._app)
+        start_scheduler(self._app)
+
         self.host = '0.0.0.0'
         self.port = terrareg.config.Config().LISTEN_PORT
         self.ssl_public_key = ssl_public_key

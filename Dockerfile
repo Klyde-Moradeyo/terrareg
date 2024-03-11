@@ -90,6 +90,7 @@ COPY LICENSE .
 COPY LICENSE.third-party .
 COPY alembic.ini .
 COPY terrareg.py .
+COPY sqlite_backup_restore.py .
 COPY terrareg terrareg
 COPY scripts scripts
 
