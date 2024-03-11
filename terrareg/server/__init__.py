@@ -115,8 +115,7 @@ class Server(BaseHandler):
         )
 
         # Start Sqlite Backup Scheler
-        from sqlite_backup_restore import start_scheduler, restore_database
-        restore_database(self._app)
+        from sqlite_backup_restore import start_scheduler
         start_scheduler(self._app)
 
         self.host = '0.0.0.0'
